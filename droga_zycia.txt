@@ -1,0 +1,39 @@
+# Liczba Drogi Życia
+
+> Obliczanie Drogi Życia i jej wpływ na wybory oraz punkty zwrotne
+
+Liczba Drogi Życia jest sumą wszystkich cyfr w dacie urodzenia, sprowadzoną do liczby podstawowej (1–9 lub liczby mistrzowskie: 11, 22, 33).
+
+---
+
+## 1. Jak obliczyć?
+Dla osoby urodzonej 7 grudnia 1993:
+
+```
+7 + 1 + 2 + 1 + 9 + 9 + 3 = 32 → 3 + 2 = 5
+```
+
+**Liczba Drogi Życia = 5**
+
+---
+
+## 2. Co oznacza?
+- **1** – lider, inicjator, energia działania
+- **2** – współpraca, intuicja, relacyjność
+- **3** – kreatywność, ekspresja, komunikacja
+- **4** – struktura, fundamenty, praktyczność
+- **5** – zmiana, przygoda, decyzje pod wpływem chwili
+- **6** – odpowiedzialność, rodzina, opieka
+- **7** – refleksja, duchowość, dystans
+- **8** – władza, realizacja, skuteczność
+- **9** – domknięcia, misja, altruizm
+
+---
+
+## 3. Wskazówka ND5
+Droga Życia to nie tylko suma – to **rytm decyzyjny**. Obserwuj:
+- Jak reagujesz w punktach zwrotnych?
+- Jakich ludzi przyciągasz?
+- Jakie powtarzają się wybory?
+
+Znając liczbę Drogi Życia, możesz przewidywać **siebie** – zanim przewidzisz przyszłość.

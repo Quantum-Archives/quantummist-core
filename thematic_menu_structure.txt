@@ -1,0 +1,49 @@
+# 🧭 THEMATIC_MENU_STRUCTURE.md – Struktura tematycznego menu QuantumMist
+
+## 🎯 Cel
+Zdefiniować system tematycznych sekcji na stronie QuantumMist – tak, aby stanowiły logiczne i energetyczne „obszary eksploracji” zarówno dla użytkowników zalogowanych, jak i gości. System stanowi bazę pod boczne menu po lewej stronie i przyszłe systemy filtrów osobistych (np. styl treści).
+
+---
+
+## 🧱 Struktura głównych sekcji tematycznych
+
+| Kod | Nazwa | Opis | Symbolika |
+|------|-------|------|-----------|
+| `tarot` | Echo Słów | rozkłady, archetypy, pytania | 🌌 Karty jako lustra duszy |
+| `horoscope` | Rytmy Światła | prognozy, mapy czasu, cykle | ☀️ Ruch nieba |
+| `shadow` | Przestrzeń Cienia | emocje niewypowiedziane, energia zamrożona | 🌑 Praca głęboka |
+| `journal` | Dziennik | notatki, refleksje, osobisty zapis | 🪶 Ślad Duszy |
+| `favorites` | Tablica Osobista | foldery inspiracji, cytaty, obrazy | ⭐ Symboliczne zakładki |
+| `store` | Stragan Światła | usługi do zamówienia, ścieżki | 🛍️ Przestrzeń wymiany |
+| `reflection` | Echo sprzed 30 dni | wgląd retrospektywny, archetypy cykliczne | 🔄 Powrót na ślad |
+| `kosmogram` | Kronika Istnienia | (ukryte) modułowe mapy duszy | 🔒 Widoczne tylko dla ND5 |
+
+---
+
+## 🧠 Hierarchia i poziomy
+
+| Poziom | Dostęp | Opis |
+|--------|--------|------|
+| `public` | Gość / każdy | może czytać, oglądać zajawki, przeglądać struktury |
+| `logged` | Użytkownik zalogowany | może dodawać do dziennika, przypinać, filtrować treść |
+| `curated` | Dostęp po aktywacji | specjalne materiały dla zaufanych lub subskrybentów |
+| `nd5_only` | ND5 / Operator | tworzenie, zarządzanie, ukryte sloty, niestandardowe ścieżki |
+
+---
+
+## 🔍 Przyszłe funkcje filtracji
+- Filtr „Typ Duszy” (delikatna / precyzyjna / wizjonerska / rytualna)
+- Filtr poziomu wglądu (początek / proces / integracja)
+- Oznaczenia: „cytat do pracy”, „praca z AI”, „wątek powtarzalny”
+
+---
+
+## 📌 Sloty logiczne (do UI)
+- `slot:leftmenu_thematic_nav` ← UI po lewej stronie (menu boczne)
+- `slot:section_meta_filter` ← widoczność, poziom, styl treści
+- `slot:thematic_router` ← wewnętrzny routing do treści
+
+---
+
+## ✅ Status
+Struktura gotowa do integracji z panelem bocznym i personalizacją użytkownika. Może być rozszerzona o style symboliczne, podmenu narracyjne, filtry wglądu i niestandardowe ścieżki kosmiczne.

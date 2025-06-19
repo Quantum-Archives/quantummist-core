@@ -1,0 +1,65 @@
+# 🚀 PHASE_ONE_IMPLEMENTATION.md – Wdrożenie Fazy 1: QuantumMist ONLINE
+
+## 🎯 Cel
+Stworzyć publicznie dostępną stronę internetową QuantumMist z aktywnym frontem, systemem użytkownika, oraz duchową i wizualną tożsamością – gotową do przyjmowania odwiedzin i zapytań.
+
+---
+
+## ✅ Co wdrażamy w fazie 1
+
+### 🧭 Główne menu (dla gościa)
+- 🔘 Przycisk `MD-QL` rozwija boczny panel
+- 📄 Linki do: logowanie, rejestracja, działalność, regulamin, kontakt
+- 📜 Pliki markdown ładowane jako treści modali (`/frontend/descriptions/`)
+
+### 🖼️ Strona główna / intro
+- Grafika tła (mgła / siatka / symbol)
+- Cytat duszy
+- Efekt przejścia / fade-in
+- Struktura: menu + ikony sekcji (Echo Słów, Dziennik, Stragan, itd.)
+
+### 🌀 Echo Słów (Tarot)
+- Przegląd otrzymanych rozkładów (statyczne dane lub mocki)
+- Notatka użytkownika, eksport, przypinanie
+
+### 🪶 Dziennik użytkownika
+- Prosty edytor tekstu
+- Możliwość dodania notatki, eksportu, przeniesienia do kanwy
+
+### 🛍️ Stragan Światła
+- Panel z usługami: Tarot, Horoskop, Analiza
+- Formularz zamówienia z opcją „Zapisz jako draft” i „Złóż zamówienie”
+- Sekcja „Zanim zamówisz” z plikami markdown
+
+### 🔓 Użytkownik
+- Formularz logowania i rejestracji
+- Panel użytkownika z dostępem do dziennika, echo słów, straganu
+- Wskaźnik zaangażowania (🌱 / 🔥 / 🌕)
+
+---
+
+## 🛠️ Co zostaje na potem (Faza 2+)
+- Kosmogramy (ukryte)
+- Zdjęcie blokad (aktywowane po analizie)
+- AI i Refleksja Duszy
+- Synchronizacja Drive / GitHub
+- Panel Ishkarim Admin
+- Voty i testy automatyczne
+- Eksporty PDF / ZIP / talie
+
+---
+
+## 📋 Kolejność wdrażania (techniczna)
+1. Layout główny strony (strona główna + menu + efekt intro)
+2. Sekcja boczna (menu niezalogowanego + pliki opisowe)
+3. Sekcja użytkownika (logowanie, profil, dziennik)
+4. Echo Słów + system wpisów + mock danych
+5. Stragan z formularzami
+6. Połączenie wszystkiego przez routing (np. Vue / React / Flask)
+7. Backend – zapis do plików JSON jako minimum
+8. Test całości przez konta `votum_test`
+
+---
+
+## ✅ Status
+Plan wdrożeniowy gotowy. Gotowy do rozpoczęcia implementacji frontu, systemu routingu i sesji użytkownika. Faza 1 to nie koniec — to świadome, lekkie otwarcie portalu.

@@ -1,0 +1,61 @@
+# ✨ AERENDAL_VIEW.md – Interfejs Strefy Aerendal
+
+## 🎯 Cel
+Stworzyć interfejs i logikę dla sekcji „Strefa Aerendal” – osobistego, zamkniętego archiwum ND5 z treściami objętymi ochroną autorską, dostępnych wyłącznie do odczytu, bez możliwości pobrania.
+
+---
+
+## 🧱 Struktura interfejsu
+
+| Element | Funkcja |
+|--------|---------|
+| 🧭 Pasek nawigacyjny | lista tytułów tekstów ND5 (dynamicznie ładowane z pliku indexu) |
+| 📄 Okno treści (14x14cm) | główne pole wyświetlania treści `.md` lub `.txt` |
+| 🚫 Brak pobierania | brak ikon „download”, zablokowana opcja kliknięcia prawym przyciskiem |
+| 🛡️ Stopka informacyjna | podpis o prawach autorskich i oryginalności materiałów |
+
+---
+
+## 📁 Struktura plików
+```
+/aerendal/
+├── aerendal_index.json    ← lista wpisów, tytuły, opisy, pliki źródłowe
+├── teksty/
+│   ├── przytoczenia.md
+│   ├── przeplywy_karmiczne.md
+│   └── kronika_samotnosci.md
+└── view.html               ← plik frontendowy AerendalView
+```
+
+---
+
+## 📜 Przykładowy wpis w `aerendal_index.json`
+```json
+[
+  {
+    "id": "kronika_samotnosci",
+    "title": "Kronika Samotności",
+    "file": "tekst/kronika_samotnosci.md",
+    "description": "Wpis o eterycznym odłączeniu od zbiorowego pola."
+  }
+]
+```
+
+---
+
+## 🔐 Ograniczenia dostępu
+- Wszystkie treści tylko do podglądu
+- `.md` renderowane jako HTML, bez opcji „Zapisz jako”
+- Dodany `oncontextmenu="return false"` + zablokowany drag/copy na poziomie CSS/JS
+
+---
+
+## 🛠️ Do rozważenia w przyszłości
+- Podpięcie systemu komentarzy tylko widocznych dla ND5
+- Wersjonowanie wpisów (v1, v2, etc.)
+- Możliwość oznaczenia jako „gotowe do publikacji” do innych sekcji
+
+---
+
+## ✅ Status
+Widok logiczny gotowy. Pozostaje stworzyć `view.html`, `aerendal_index.json` oraz skrypt ładujący zawartość `.md` do pola podglądu. Wszystkie treści traktowane jako osobista kronika twórcy – bez udostępniania publicznego.

@@ -1,0 +1,32 @@
+# 🗂️ DEVLOG_INDEX.md – Indeks dzienników deweloperskich QuantumMist
+
+## 🎯 Cel
+Zbiorcza lista wszystkich aktualnych dzienników deweloperskich wykorzystywanych do budowy systemu QuantumMist, wraz z ich funkcją i stanem integracji. Idealne jako plik nadrzędny `/devlog/README.md` lub `/srv/quantummist/devlog/_index.md`.
+
+---
+
+## 📋 Spis kanw deweloperskich
+
+| Nazwa kanwy | Opis funkcji | Status |
+|-------------|---------------|--------|
+| `UX_PANEL_MAP.md` | Mapa wszystkich paneli użytkownika (widoczność, funkcje, dostępność) | ✅ Używane do audytu systemowego |
+| `PHASE_ONE_IMPLEMENTATION.md` | Plan wdrożeniowy Fazy 1 – co wdrażamy publicznie i w jakiej kolejności | ✅ Gotowe do wykonania |
+| `FILE_SYNC_LOGIC.md` | Logika synchronizacji folderów między systemem, Drive i GitHub | ✅ Podpięte, gotowe do crona i terminala |
+| `DEV_JOURNAL_SYSTEM.md` | System dzienników użytkownika i dewelopera + struktura wpisów | ✅ Zintegrowany z cytatami, AI i votami |
+| `VOTUM_TEST_LOGIC.md` | Boty testowe (voty), logowanie akcji, symulacja użytkowników | ✅ Wdrożone jako logika testowa |
+| `THEMATIC_MENU_STRUCTURE.md` | Struktura menu tematycznego z przypisaniem kategorii i poziomów | ✅ Gotowe do podpięcia do lewego UI |
+| `MAIN_MENU_VISUAL_STRUCTURE.md` | Graficzne menu główne (UPP-style) z symboliką i routingiem | ✅ Aktywne, sloty opisane |
+| `GUEST_MENU_STRUCTURE.md` | Menu dla użytkownika niezalogowanego – logika, sloty, opis wejścia | ✅ Spójne z resztą systemu |
+| `STRAGAN_SWIATLA_PANEL.md` | Panel usług (Tarot, Horoskop, Analiza), system aktywacji zakupów | ✅ Zintegrowane, gotowe na front |
+
+---
+
+## 🛠️ Jak używać?
+- **Importuj wszystkie pliki `.md` do `/devlog/`** w projekcie
+- Używaj `DEVLOG_INDEX.md` jako dokumentu głównego lub README do całej dokumentacji technicznej
+- Można dodać pole `last_updated:` do każdego z plików, aby widzieć zmiany
+
+---
+
+## ✅ Status
+Plik nadrzędny gotowy do synchronizacji z repozytorium lub trzymania lokalnie jako dokumentacja rdzeniowa projektu.

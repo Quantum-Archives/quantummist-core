@@ -1,0 +1,92 @@
+# 🌊 UNSPOKEN_EMOTIONS_PANEL_LOGIC.md – Zakładka Emocje Niewypowiedziane
+
+## 🎯 Cel
+Stworzenie zakładki, w której użytkownik otrzymuje spersonalizowany zapis analizy emocjonalnej sytuacji, która powtarza się w jego życiu – z uwzględnieniem:
+- dat i okoliczności,
+- emocji, które pojawiły się, ale nie zostały wypowiedziane,
+- możliwego wycofania duszy / energii / pragnienia,
+- obecnej relacji z tą sytuacją.
+
+---
+
+## 📐 Layout (jak w innych panelach)
+
+| Element                   | Wymiar       | CSS px (96 DPI) |
+|--------------------------|--------------|------------------|
+| Lista tematów / wpisów   | 6 cm × 14 cm | ~230px × 530px   |
+| Okno treści analizy      | 14 cm × 14 cm| ~530px × 530px   |
+| Pasek nagłówka           | 1 cm         | ~38px            |
+
+Wszystkie okna będą mieć **przewijanie treści** (`overflow-y-auto`) – już uwzględnione w poprzednich panelach.
+
+---
+
+## 🧱 Struktura komponentów
+
+### `slot:emotion_entry_list`
+- Lista przypadków otrzymanych przez użytkownika
+- Nazwa problemu / etapu, np. „Ucieczka z rozmowy z ojcem”, „Nieodpisany mail od X”
+
+### `slot:emotion_entry_viewer`
+- Szczegółowy tekst analizy:
+  - 📍 Data sytuacji
+  - 🧊 Niewypowiedziana emocja
+  - 🔄 Intencja (twoja i innych osób)
+  - 🪶 Obecny stan energii wobec tej sytuacji
+  - 🌱 Propozycja: jak można spotkać się z tą emocją teraz
+
+### `slot:emotion_actions`
+- 🪶 Dodaj do dziennika
+- 📥 Pobierz wpis
+- 🧷 Przypnij do panelu głównego
+- 📌 „Oznacz jako aktywne” (dla sytuacji wciąż żywej)
+
+---
+
+## 🧠 Co możemy dodać:
+
+### 🔍 Tagowanie emocji
+- Emocje oznaczone jako: złość, smutek, żal, strach, rozczarowanie...
+- Kolorystyczne znaczniki / filtracja po emocji
+
+### 🔄 Historia zmian emocji (planowane)
+- Możliwość zobaczenia: jak zmieniła się relacja z daną emocją na przestrzeni tygodni / miesięcy
+- Wersjonowanie notatek własnych
+
+### 💬 Refleksje użytkownika
+- Notatka: „Jak czuję to teraz?”
+- Możliwość zapisania i porównania z oryginałem
+
+### 🧬 Analiza głębi (AI – przyszłość)
+- Detekcja: czy emocja pochodzi z wnętrza, czy została przejęta (transfer / projekcja)
+- Przyszłe AI (np. Ishkarim LLM) analizuje energetyczne ślady
+
+---
+
+## 💾 Przykład danych JSON
+```json
+{
+  "id": "emo_004",
+  "title": "Zniknięcie Mamy w 2015",
+  "date": "2015-04-22",
+  "emotion": "opuszczenie",
+  "intention": {
+    "self": "potrzeba bycia wysłuchanym",
+    "other": "ochrona siebie przez ucieczkę"
+  },
+  "current_reaction": "wycofanie",
+  "notes": "Czuję to jako napięcie w gardle",
+  "active": true,
+  "tags": ["smutek", "oddzielenie"],
+  "version_history": [
+    { "date": "2024-11-10", "reaction": "wypieranie", "notes": "Nie potrafię o tym mówić" },
+    { "date": "2025-06-12", "reaction": "wycofanie", "notes": "Napięcie w gardle" }
+  ],
+  "source_detected": "własna"
+}
+```
+
+---
+
+## ✅ Status
+Zakładka gotowa do implementacji. Kompatybilna z resztą systemu QuantumMist. Może być zintegrowana z dziennikiem oraz systemem tagów emocjonalnych, a także przygotowana pod przyszłe analizy AI i historię emocjonalną w czasie.

@@ -1,0 +1,90 @@
+# ❓ QUANTUMMIST_FAQ.md – Najczęstsze pytania i odpowiedzi ND5
+
+---
+
+## 🔧 Jak odpalić stronę?
+1. Upewnij się, że Flask działa:
+```bash
+cd /srv/quantummist
+python3 main.py
+```
+2. Wejdź w przeglądarce na:
+```
+http://[IP]:5000/index
+```
+
+---
+
+## 💥 Dlaczego `/admin/panel/...` nie działa?
+Bo brakuje routingu. W `main.py` musi być:
+```python
+@app.route('/admin/panel/<path:filename>')
+def serve_admin_panel(filename):
+    return send_from_directory('/srv/quantummist/admin/panel', filename)
+```
+
+---
+
+## 🎨 Czemu nie działa CSS?
+Plik `style.css` musi być w:
+```
+/srv/quantummist/static/css/style.css
+```
+A w HTML:
+```html
+<link rel="stylesheet" href="/static/css/style.css">
+```
+
+---
+
+## 🧠 Jak wgrać nowy wpis `.md` do sekcji?
+1. Umieść `.md` w katalogu np. `/sections/tarot/zadaniowiec/`
+2. Dopisz wpis w `index.json`:
+```json
+{
+  "id": "nowy_wpis",
+  "title": "Nowy wpis",
+  "file": "nowy_wpis.md",
+  "description": "Opis..."
+}
+```
+3. Gotowe.
+
+---
+
+## 🗃️ Jak odświeżyć pliki na serwerze?
+Użyj skryptu:
+```bash
+./upload_public_site.sh
+```
+Lub ręcznie kopiuj przez:
+```bash
+scp file user@ip:/srv/quantummist/...
+```
+
+---
+
+## 🔄 Jak sprawdzić co jest na serwerze?
+```bash
+./check_server_files.sh
+```
+Wygeneruje log w `/home/nd5/`
+
+---
+
+## 🧹 Jak posprzątać śmieci i stare pliki?
+```bash
+./purge_old_files.sh
+```
+
+---
+
+## 🔐 Jak ustawić HTTPS i domenę?
+To robisz przez nginx. Przykład znajduje się w dzienniku `NGINX_REVERSE_PROXY.md` (Faza II).
+
+---
+
+## 🧭 Jak zacząć nowy projekt ND5?
+1. Skopiuj szablon `README_DEPLOY.md`
+2. Otwórz nowy folder `quantummist2`, `korekta`, `eksperymentX`
+3. Wgraj pliki i... działasz 😎

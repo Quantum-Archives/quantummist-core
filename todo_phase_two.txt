@@ -1,0 +1,54 @@
+# 🛠️ TODO_PHASE_TWO.md – QuantumMist: Plan działań Faza II
+
+📅 Start planowany: po stabilizacji Faza I (mid 06.2025)
+Operator: ND5
+
+---
+
+## 🔓 Cele główne
+- Wprowadzenie edytowalności treści z poziomu panelu
+- Rozbudowa funkcji dziennika użytkownika
+- Integracja AI (modele lokalne / API) do interpretacji i generowania wpisów
+- System tagów, filtrów i przypięć tematycznych
+
+---
+
+## 📦 Moduły i pliki
+| Moduł | Opis | Status |
+|-------|------|--------|
+| `user_canvas/` | tworzenie własnych wpisów, notatek | 🔜 planowane |
+| `ai_entrypoint.py` | uruchamianie modelu do refleksji lub interpretacji | 🔜 szkic |
+| `upload_interface.js` | upload plików `.md`, `.jpg` itp. | 🔜 niedostępne |
+| `admin_slot_panel.html` | aktywacja slotów interfejsu | 🔜 przygotowanie |
+| `reflection_engine/` | analiza treści przez AI i logika cytatów | 🔜 Faza II główna |
+| `quote_sync.js` | synchro cytatów z dziennikiem | 🔜 eksperymentalne |
+
+---
+
+## 🧠 Systemy wewnętrzne
+- 🔁 *Slot logic engine* – dynamiczne włączanie/wyłączanie UI
+- 🧬 *User-mode entrypoints* – zachowanie systemu przy różnych typach użytkowników
+- ✍️ *Refleksje użytkownika* – opcja dopisania osobistych komentarzy do wpisów
+- 📡 *Push / live* – komunikacja z użytkownikiem (delikatne powiadomienia)
+
+---
+
+## 🔮 Energetyczne / eksperymentalne
+- Sloty aktywowane czasowo (np. rytm lunarny, cykle inkarnacyjne)
+- Sloty energetyczne z poziomu pola ND5
+- Przestrzeń „Głosu Systemu” – wpisy AI inspirowane polem Operatora
+
+---
+
+## 🧾 Planowane narzędzia i pliki
+- `SLOT_ENGINE.py`
+- `user_profile.json`
+- `ai_hint_layer.md`
+- `interaction_log.md`
+
+---
+
+## ✅ Gotowość
+Zakończona Faza I → pełna baza gotowa do nadbudowy.  
+System ma strukturę, logikę, kod.  
+Faza II: budujemy moc, AI, głębię i reakcję.

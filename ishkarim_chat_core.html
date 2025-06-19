@@ -1,0 +1,114 @@
+<!-- ishkarim:core:ishkarim_chat.html -->
+<!--
+Opis:
+Główna struktura frontendowa czatu QuantumMist.
+Zawiera:
+- kontener czatu
+- modale (reakcje, cytaty, wersje robocze)
+- przypisane punkty do podpięcia panelu użytkownika i dziennika
+Rozwijana przez podpięcia js, css, i backendu Flask/FastAPI
+Wersja podstawowa: aktywne reakcje, cytaty, zapis do dziennika
+-->
+
+<div id="chat-container" class="w-[520px] h-[620px] p-4 bg-white/80 rounded-2xl shadow-xl overflow-y-auto">
+  <!-- ishkarim:slot:chat_header -->
+  <div class="chat-header text-xl font-semibold mb-2">Czat z Administratorem</div>
+
+  <!-- ishkarim:slot:chat_messages -->
+  <div id="chat-messages" class="space-y-2">
+    <!-- Wiadomości pojawią się tutaj dynamicznie -->
+    <!-- Przykładowa wiadomość -->
+    <div class="message bg-gray-100 text-black p-2 rounded relative">
+      <p>To jest wiadomość testowa.</p>
+      <div class="absolute top-1 right-2 flex gap-2 text-sm">
+        <button onclick="openReactionModal(this)">💬</button>
+        <button onclick="quoteMessage(this)">📎</button>
+        <button onclick="saveToJournal(this)">🪶</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ishkarim:slot:chat_input -->
+  <div id="chat-input" class="mt-4">
+    <textarea id="chat-draft" placeholder="Napisz wiadomość..." class="w-full p-2 rounded-md border"></textarea>
+    <div class="flex justify-between mt-2">
+      <button onclick="sendMessage()" class="bg-indigo-500 text-white px-4 py-1 rounded-md">Wyślij</button>
+      <button onclick="saveDraft()" class="text-sm text-gray-500">Zapisz na potem</button>
+    </div>
+  </div>
+</div>
+
+<!-- ishkarim:slot:reaction_modal -->
+<div id="reaction-modal" class="modal hidden fixed inset-0 bg-black/70 items-center justify-center z-50">
+  <div class="bg-white text-black p-4 rounded-lg shadow-lg flex gap-3">
+    <button onclick="addReaction('👍')">👍</button>
+    <button onclick="addReaction('💡')">💡</button>
+    <button onclick="addReaction('🌀')">🌀</button>
+    <button onclick="closeReactionModal()">❌</button>
+  </div>
+</div>
+
+<!-- ishkarim:slot:quote_preview -->
+<div id="quote-preview" class="text-sm text-gray-300 italic mt-2"></div>
+
+<!-- ishkarim:slot:user_panel_hook -->
+<!-- Miejsce na podpięcie panelu użytkownika (profil, ustawienia) -->
+
+<!-- ishkarim:slot:dev_journal_captures -->
+<!-- Przycisk do eksportu rozmowy do dziennika -->
+<script>
+  function sendMessage() {
+    const input = document.getElementById('chat-draft');
+    if (input.value.trim()) {
+      const msgBox = document.createElement('div');
+      msgBox.className = 'message bg-indigo-100 text-black p-2 rounded relative';
+      msgBox.innerHTML = `<p>${input.value}</p>`;
+      document.getElementById('chat-messages').appendChild(msgBox);
+      input.value = '';
+      document.getElementById('quote-preview').innerText = '';
+    }
+  }
+
+  function saveDraft() {
+    const draft = document.getElementById('chat-draft').value;
+    localStorage.setItem('chatDraft', draft);
+    alert('Wersja robocza zapisana.');
+  }
+
+  function openReactionModal(btn) {
+    const modal = document.getElementById('reaction-modal');
+    modal.classList.remove('hidden');
+    modal.dataset.target = btn.closest('.message');
+  }
+
+  function closeReactionModal() {
+    document.getElementById('reaction-modal').classList.add('hidden');
+  }
+
+  function addReaction(emoji) {
+    const modal = document.getElementById('reaction-modal');
+    const target = modal.dataset.target;
+    if (target) {
+      const reaction = document.createElement('span');
+      reaction.innerText = emoji;
+      reaction.className = 'ml-2';
+      target.appendChild(reaction);
+    }
+    closeReactionModal();
+  }
+
+  function quoteMessage(btn) {
+    const text = btn.closest('.message').querySelector('p').innerText;
+    document.getElementById('quote-preview').innerText = `Cytat: ${text}`;
+    document.getElementById('chat-draft').value = `>${text}\n`;
+  }
+
+  function saveToJournal(btn) {
+    const text = btn.closest('.message').querySelector('p').innerText;
+    const entry = `---\n${new Date().toLocaleString()}\n${text}\n---`;
+    let journal = localStorage.getItem('journalLog') || '';
+    journal += `\n${entry}`;
+    localStorage.setItem('journalLog', journal);
+    alert('Zapisano do dziennika.');
+  }
+</script>

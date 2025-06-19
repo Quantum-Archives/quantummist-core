@@ -1,0 +1,74 @@
+# 📘 CHAT_LOGIC.md – Logika czatu QuantumMist
+
+## 🎯 Cel
+Opis logiki działania czatu użytkownika z administratorem w QuantumMist, ze wsparciem dla:
+- historii wiadomości
+- reakcji pod wiadomościami
+- cytowania fragmentów
+- wersji roboczych wiadomości
+- zapisywania „na potem”
+- planowanych funkcji przesyłania plików (grafika/wideo)
+
+---
+
+## 🧱 Struktura komponentów (frontend)
+
+### 🪟 `#chat-container`
+- Główny kontener czatu
+- Stylizowany jako 520x620px (13 x 15,5cm)
+
+### 💬 `#chat-messages`
+- Kontener na wiadomości
+- Każda wiadomość jako osobny `div` z ID (np. `msg-1831`)
+- Wewnątrz: treść, metadane, reakcje
+
+### 🖊️ `#chat-draft`
+- `textarea` do pisania wiadomości
+- Obsługuje localStorage (wersje robocze)
+
+### 🔘 Przycisk „Wyślij”
+- Wywołuje `sendMessage()` → wysyła do backendu
+
+### 💾 Przycisk „Zapisz na potem”
+- Wywołuje `saveDraft()`
+- Zapisuje aktualną wiadomość w localStorage z timestampem
+
+### 🔄 Cytowanie (quote)
+- Każda wiadomość ma przycisk `"Cytuj"`
+- Kliknięcie wstawia cytat do drafta i pokazuje podgląd cytowanego fragmentu (`#quote-preview`)
+
+### 💟 Reakcje
+- Reakcje dostępne po najechaniu na wiadomość (ikony: 👍, 💡, 🌀)
+- Kliknięcie wysyła `POST /chat/react` z ID wiadomości
+- Frontend zapisuje lokalnie + sync z backendem
+
+---
+
+## 💾 Backend (plan minimum viable API)
+
+### `POST /chat/send`
+- Dane: `{ "user_id": ..., "message": "...", "quote": optional }`
+- Odpowiedź: `{ status: ok, message_id: ... }`
+
+### `GET /chat/history?user_id=...`
+- Zwraca historię rozmowy użytkownika
+
+### `POST /chat/react`
+- `{ message_id, reaction_type }`
+- Zapisuje reakcję do DB / JSON pliku
+
+---
+
+## 🧠 Przyszłe funkcje (sloty planowane)
+- `POST /chat/media_upload` – przesyłanie plików (tylko zaufani)
+- `GET /chat/drafts` – lista wersji roboczych
+- `POST /chat/save_to_journal` – eksport rozmowy do dziennika użytkownika
+
+---
+
+## 🔌 Punkty podpięcia
+- **`#user_panel_hook`** → slot profilu, preferencji i dostępu
+- **`#dev_journal_captures`** → przycisk eksportu do kanwy
+
+## ✅ Status
+Plik aktywny. Gotowy do powiązania z backendem i rozwijania.

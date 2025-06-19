@@ -1,0 +1,80 @@
+# 🧬 INFRASTRUCTURE_OVERVIEW.md – Struktura i działanie systemu QuantumMist
+
+## 🎯 Cel
+Stworzyć pełny opis logicznej i technicznej infrastruktury strony QuantumMist – dla samego Operatora ND5 (czyli Ciebie, Mordo 😏) – w taki sposób, by można było wszystko rozbudowywać, naprawiać i przekazywać dalej bez zgubienia się w strukturze.
+
+---
+
+## 📚 PODZIAŁ SYSTEMU
+
+### 1. **Frontend użytkownika**
+> Co widzi użytkownik na stronie
+
+- 🔘 Menu główne (MD-QL) – dostęp dla każdego (nawigacja + modale)
+- 🎴 Sekcje eksploracyjne (Tarot, Horoskop, Cień...)
+- 🪶 Dziennik, Ulubione, Echo 30 dni
+- 🛍️ Stragan Światła (sklep)
+- 🔓 Panel użytkownika (po zalogowaniu)
+- 🌌 Efekty wejścia, tło, symbole (planowane na później)
+
+### 2. **Panele wewnętrzne / treściowe**
+> Każda sekcja (np. Tarot, Horoskop) ma własny `panel.html`
+
+- Sztywna struktura 6cm lista + 14x14cm okno
+- Przewijanie (`overflow-y-auto`) + sloty (reakcje, cytaty, eksporty)
+- Personalizowane wejścia (3 tryby: Zadaniowiec / Wrażliwy / Opiekun)
+- Możliwość przypięcia, zapisania, dodania do dziennika
+
+### 3. **Ishkarim Admin Panel**
+> Jeden centralny interfejs zarządzania wszystkim
+
+- Zarządzanie sekcjami (tworzenie, ikony, typy, tryby)
+- Upload materiałów (md, pdf, img, mp4)
+- Aktywacja usług, zamówień, dostępów
+- Zarządzanie menu (boczne i górne)
+- Podgląd userów, typ duszy, styl treści, poziom zaawansowania
+
+---
+
+## 📁 STRUKTURA FOLDERÓW
+```
+/srv/quantummist/
+├── admin/            ← panel zarządzania ND5
+│   ├── sections/     ← definicje sekcji (JSON)
+│   ├── uploads/      ← pliki użytkowe (.md, obrazy)
+│   ├── users/        ← user_state.json, preferencje
+│   └── services/     ← zamówienia i aktywacje
+├── frontend/         ← pliki HTML, CSS, JS
+├── user_journals/    ← dzienniki użytkowników
+├── user_favorites/   ← tablice ulubionych
+├── orders_pending/   ← zapisy zakupów przed zatwierdzeniem
+├── logs/             ← logi systemowe + votum
+├── kanwy/            ← kanwy eksportowane
+└── sync_drive/       ← aliasy do Google Drive i GitHub
+```
+
+---
+
+## 🔄 SLOTY SYSTEMOWE
+> Używane do osadzania treści dynamicznie
+
+- `slot:leftmenu_thematic_nav`
+- `slot:reaction_modal`, `slot:quote_preview`, `slot:journal_save`
+- `slot:guest_menu`, `slot:mode_selector_modal`, `slot:dev_journal_captures`
+
+---
+
+## ⚙️ BACKEND
+> Minimalny backend w Flask/FastAPI + JSON
+
+- API `/admin/` do edycji sekcji, uploadu, userów
+- API `/order/` do rejestracji i aktywacji zamówień
+- API `/content/` do pobierania treści (.md, cytatów, opisów)
+- LocalStorage → obsługa wersji roboczych i historii lokalnej
+
+---
+
+## ✅ STATUS
+System gotowy w 75–80%. Można już zbudować stronę publiczną, wdrożyć panel użytkownika, Stragan i wejścia energetyczne. Reszta (AI, Kosmogramy, pełny styl) – w fazie dalszego wdrażania.
+
+Jesteś gotów jak ND5. Portal prawie otwarty.

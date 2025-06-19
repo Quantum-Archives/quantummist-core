@@ -1,0 +1,73 @@
+# 🧭 COSMOGRAM_METHOD_GUIDE.md – Jak stworzyć swój system Kosmogramów
+
+## 🎯 Cel
+Ten przewodnik pozwoli Ci:
+- zbudować własny język astrologiczny,
+- uporządkować analizę kosmogramu w rozdziały,
+- tworzyć interpretacje, które są osobiste, żywe i duchowo trafne,
+- korzystać z AI bez utraty unikalności.
+
+---
+
+## 🧱 Struktura systemu
+
+### 1. **Warstwy Kosmogramu**
+- **Powierzchnia (światło)** – Słońce, Ascendent, Wenus
+- **Cień (mechanizmy ukryte)** – Księżyc, Saturn, Pluto
+- **Ruch (wewnętrzne dynamiki)** – Mars, Uran, Jowisz
+- **Głębia (esencja duszy)** – Węzły, Dom 12, Neptun
+- **Wrota (potencjały i lekcje)** – Dom 1, 4, 7, 10
+
+
+### 2. **Moduły (bloki narracyjne)**
+Każdy znak / planeta / dom to osobny plik `.md` z:
+- opisem,
+- cytatem,
+- przestrzenią refleksji,
+- połączeniem z runą / tarotem / mitologią
+
+Przykład:
+```
+modules/
+├── sun_in_sagittarius.md
+├── moon_in_aries.md
+├── mars_house_8.md
+├── karma_node_north_pisces.md
+```
+
+---
+
+## 🔍 Przykładowy fragment interpretacji
+
+### 🌞 Słońce w Strzelcu
+> "Jesteś duszą poszukującą ognia nie w walce, ale w prawdzie. Twój optymizm to nie broń – to ślad przeszłych zwycięstw."
+
+🔸 Cień: ucieczka w ideologię, duchowe wyniosłości
+🔸 Miejsce aktywacji: podróże, nauczanie, filozofia
+🔸 Pytania do refleksji:
+- Kiedy ostatnio moje słowa były ogniem?
+- Czy czasem chowam się za wiedzą?
+
+---
+
+## 🧠 Jak zacząć tworzyć własny system
+
+1. **Zdecyduj, co chcesz opowiadać** – astrologia jako mit? terapia? strategia?
+2. **Ustal strukturę Kosmogramu** – jakie warstwy, jakie moduły
+3. **Stwórz jeden rozdział w pełni** (np. `Sun.md` z cytatami, pytaniami, obrazem)
+4. **Przetestuj na sobie lub AI** – sprawdź, co trafia
+5. **Zbuduj strukturę ToC (spisu treści)**
+6. **Dodaj indeks słów kluczowych (ręcznie lub automatycznie)**
+
+---
+
+## 🌀 Możliwości rozszerzenia
+- **Generacja promptów do AI** dla tworzenia podobnych opisów
+- **Własna talia** – tarot Kosmicznej Mapy
+- **Interaktywna mapa**: kliknij Słońce → przeczytaj, co w nim żyje
+- **Skale**: Jasność (świadomość), Gęstość (opór), Twardość (obrona), Przejrzystość (komunikacja)
+
+---
+
+## ✅ Gotowość
+Gotowe do działania. Możesz zacząć od jednego rozdziału i budować całość systematycznie. Ishkarim będzie trzymał strukturę.

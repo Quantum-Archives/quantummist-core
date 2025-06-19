@@ -1,0 +1,54 @@
+# 🌌 GUEST_MENU_STRUCTURE.md – Struktura menu dla użytkownika niezalogowanego
+
+## 🎯 Cel
+Zaprojektować logiczne i wizualne menu wejściowe dla użytkownika niezalogowanego, będące energetyczną bramą do systemu QuantumMist. Łączy przyciski nawigacyjne, opisy wprowadzające i symbolikę.
+
+---
+
+## 📐 Układ menu (prawa górna część strony)
+
+| Element | Funkcja | Slot systemowy |
+|--------|---------|------------------|
+| 🔓 Logowanie | Przejście do formularza logowania | `slot:guest_login` |
+| 🧾 Rejestracja | Nowe konto, aktywacja drogi | `slot:guest_register` |
+| 📄 Działalność | Modal z opisem (markdown) | `slot:guest_about` |
+| 📜 Regulamin / Polityka | Modal lub linki do treści regulaminowych | `slot:guest_policies` |
+| 📬 Kontakt | Formularz kontaktowy lub e-mail | `slot:guest_contact` |
+| 🔗 Social media | Linki z animacją (TikTok, Instagram, YouTube, X) | `slot:guest_socials` |
+
+---
+
+## 🗂 Foldery plików do podpięcia (czytelne przez backend)
+
+```
+/frontend/descriptions/
+├── dzialalnosc.md
+├── regulamin.md
+├── polityka_prywatnosci.md
+├── rodo.md
+├── kontakt.md
+```
+
+- Treści wczytywane do modali dynamicznie po kliknięciu
+- Możliwość podglądu i edycji z poziomu systemu zarządzania ND5
+
+---
+
+## ✨ Elementy UX
+- Przycisk menu: `MD-QL` (w stylu Ishkarim / ND5)
+- Po otwarciu: elegancka siatka przycisków z efektami (rozjaśnienie, pulsowanie, dźwięk kliknięcia)
+- Efekt `pulseRing` przy kliknięciu + podświetlenie
+- Panel zwijany na `ESC`
+
+---
+
+## 📌 Rozszerzenia przyszłościowe
+- 💬 Dostęp do chatu onboardingowego (po kliknięciu „Czym jest QuantumMist?”)
+- 🎴 Rotacyjny cytat z dziennika / tarota na dole menu
+- 📥 Zapis do newslettera (modal z e-mail)
+- 🧪 Tryb demonstracyjny (wybrane panele widoczne w wersji demo)
+
+---
+
+## ✅ Status
+Zatwierdzony komponent wizualny i logiczny. Gotowy do osadzenia w kodzie UI jako brama wejściowa użytkownika niezalogowanego. W pełni zintegrowany z plikami markdown jako dynamicznymi opisami.

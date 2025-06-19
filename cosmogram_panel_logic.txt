@@ -1,0 +1,69 @@
+# 🌌 COSMOGRAM_PANEL_LOGIC.md – Zakładka Kosmogramy w QuantumMist
+
+## 🎯 Cel
+Stworzenie przestrzeni użytkownika do przeglądania, edytowania i eksplorowania rozbudowanych kosmogramów – w tym modułowych analiz osobistych, refleksji, notatek i strukturyzowanej narracji astrologicznej.
+
+---
+
+## 📐 Layout (zgodność z innymi panelami)
+
+| Element                 | Wymiar       | CSS px (96 DPI) |
+|------------------------|--------------|------------------|
+| Lista kosmogramów      | 6 cm × 14 cm | ~230px × 530px   |
+| Okno edycji / podglądu | 14 cm × 14 cm| ~530px × 530px   |
+| Pasek nagłówka         | 1 cm         | ~38px            |
+
+---
+
+## 🧱 Główne komponenty
+
+### `slot:cosmogram_list`
+- Lista zapisanych kosmogramów (dla siebie lub innych)
+- Nazwa, data urodzenia, opcjonalnie ikonka osoby, relacja (np. „mama”, „partner”)
+
+### `slot:cosmogram_viewer`
+- Treść kosmogramu (modularna lub pełna)
+- Możliwość przeskoku do wybranego modułu (np. Wenus, Mars)
+- Możliwość dodania własnej notatki przy danym fragmencie
+
+### `slot:cosmogram_actions`
+- 🪶 Wyślij wpis do dziennika
+- 📥 Pobierz jako PDF / MD
+- 🔖 Przypnij
+- 🔍 **Przegląd słów kluczowych**
+- 📄 **Wygeneruj spis treści**
+
+---
+
+## 🔍 Przegląd słów / indeksacja
+- Użytkownik może:
+  - wyszukać słowo lub frazę (np. „cykl”, „Pluton”, „dominacja”)
+  - przeskoczyć do rozdziału z tym słowem
+- System generuje słownik tagów z każdego kosmogramu
+
+---
+
+## 📄 Spis treści
+- Generowany automatycznie z tytułów modułów (np. `#`, `##` w markdownie)
+- Może być edytowalny (zmiana nazw, kolejność)
+- Może zawierać oznaczenia personalne: „Dotyczy mnie” / „Dotyczy X osoby”
+
+---
+
+## 💾 Przechowywanie
+```json
+{
+  "id": "cosmo_008",
+  "name": "Kosmogram: Ola (partnerka)",
+  "dob": "1998-10-04",
+  "tags": ["partner", "miłość", "księżyc"],
+  "file": "cosmo_ola_008.md",
+  "indexed": true,
+  "owner": "user_144"
+}
+```
+
+---
+
+## ✅ Status
+Logika gotowa. Możliwość osadzenia w systemie identycznie jak horoskopy, z dodatkową warstwą analizy (indeksy, notatki, spisy treści).

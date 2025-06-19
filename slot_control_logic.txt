@@ -1,0 +1,66 @@
+# 🎛️ SLOT_CONTROL_LOGIC.md – System zarządzania slotami w QuantumMist
+
+## 🎯 Cel
+Umożliwić dynamiczne zarządzanie widocznością i aktywacją sekcji interfejsu użytkownika i administratora na podstawie tzw. slotów – punktów logicznych powiązanych z komponentami.
+
+---
+
+## 🔧 Co to jest slot?
+Slot to znacznik (logiczny lub graficzny), który reprezentuje punkt wejścia / wyświetlenia jakiegoś elementu portalu.
+
+### Przykłady slotów:
+| Slot | Co kontroluje | Opis |
+|------|----------------|------|
+| `slot:reaction_modal` | reakcje na wpisy | widoczność okienka reakcji w rozkładzie lub dzienniku |
+| `slot:leftmenu_thematic_nav` | menu boczne z tematami | czy użytkownik widzi menu eksploracyjne |
+| `slot:journal_save_hook` | zapisywanie cytatów do dziennika | aktywacja przycisku „Zapisz do dziennika” |
+| `slot:quote_preview` | podgląd cytatu | czy system pokazuje okienko z cytatem z czatu lub wpisu |
+| `slot:reflection_entry` | wpis refleksyjny użytkownika | aktywacja pola typu „Co Cię poruszyło?” |
+
+---
+
+## 🧩 Format pliku zarządzania slotami
+```json
+{
+  "slot:reaction_modal": true,
+  "slot:leftmenu_thematic_nav": true,
+  "slot:journal_save_hook": false,
+  "slot:quote_preview": false,
+  "slot:reflection_entry": true
+}
+```
+
+Plik może się nazywać:
+```
+/srv/quantummist/admin/config/slot_visibility.json
+```
+
+---
+
+## 🛠️ Wykorzystanie w `admin.js`
+Panel admina może pobierać ten plik i:
+- pokazywać przełączniki dla każdego slotu
+- umożliwiać zapis zmienionej konfiguracji (w Faza II)
+- aktywować układy `.md` i render pod ich logikę
+
+---
+
+## 📦 Komponenty wspierające sloty:
+| Komponent | Obsługiwany slot |
+|-----------|------------------|
+| `render.js` | `journal_save_hook`, `quote_preview` |
+| `admin.js` | `slot visibility list` |
+| `leftmenu.html` | `leftmenu_thematic_nav` |
+
+---
+
+## 🔮 Rozszerzenia (Faza II):
+- Sloty personalizowane per użytkownik (np. `user/nd5/slots.json`)
+- Sloty energetyczne – aktywowane po osiągnięciu poziomu (np. echo 30 dni)
+- Sloty dzienne – zmienne w czasie (np. rytm lunarny, dzień astrologiczny)
+
+---
+
+## ✅ Status
+System slotów wdrożony logicznie, możliwy do rozbudowy.
+Panel Ishkarima gotowy do przyjęcia ich jako przełączników lub reguł dynamicznych.
