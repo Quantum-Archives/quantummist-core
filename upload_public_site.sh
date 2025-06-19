@@ -11,8 +11,8 @@ sudo cp -v "$SOURCE_DIR/section_view.html" "$DEST_ROOT/templates/"
 sudo cp -v "$SOURCE_DIR/aerendal_view.html" "$DEST_ROOT/templates/"
 
 # Skrypty JS
-sudo mkdir -p "$DEST_ROOT/static/scripts"
-sudo cp -v "$SOURCE_DIR/render.js" "$DEST_ROOT/static/scripts/"
+sudo mkdir -p "$DEST_ROOT/scripts"
+sudo cp -v "$SOURCE_DIR/render.js" "$DEST_ROOT/scripts/"
 
 # Style (ND5 basic)
 sudo mkdir -p "$DEST_ROOT/static/css"
