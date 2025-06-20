@@ -1,0 +1,73 @@
+# 🌌 COSMOGRAM_SYSTEM_METHOD.md – Budowa własnego systemu horoskopów
+
+## 🎯 Cel
+Stworzenie unikalnej metodologii kosmogramów i horoskopów w systemie QuantumMist, która łączy klasyczną astrologię, intuicyjne wglądy, AI-asystę i struktury narracyjne.
+
+---
+
+## 📘 Podstawowe założenia systemu
+
+1. **Horoskop to mapa, nie wyrok** – nie determinuje, a prowadzi
+2. **Narracja zamiast listy** – zamiast suchych informacji: historia, opowieść, mit duszy
+3. **Hierarchia warstw** – nie wszystko jest „na raz”; użytkownik może sięgać głębiej z czasem
+4. **Integracja z Tarotem / Runami / Energią** – uzupełnienia, nie dodatki
+5. **Forma modularna** – można go złożyć jak księgę, rozdział po rozdziale
+6. **Tymczasowo ukryty** – funkcja Kosmogramu w systemie QuantumMist jest ukryta dla użytkownika, widoczna tylko w kodzie i dla operatora ND5 do dalszego opracowania
+
+---
+
+## 🪞 Moduły horoskopu (do wyboru, kombinowane)
+
+| Kod | Nazwa | Opis |
+|-----|-------|------|
+| `core_sun` | Rdzeń słoneczny | Główna tożsamość, miejsce ekspresji |
+| `deep_moon` | Księżycowa pamięć | Emocje, podświadomość, rytuał duszy |
+| `rising_gate` | Wrota osobowości | Ascendent jako zewnętrzna brama |
+| `mars_pulse` | Impuls i decyzja | Jak rusza do przodu, kiedy walczy |
+| `venus_thread` | Tkanka relacji | Wzorce miłości, zmysłowości, przyciągania |
+| `karma_node` | Węzły karmiczne | Przyszłość vs. przeszłość |
+| `mirror_chart` | Lustrzany znak | Punkt zaprzeczenia lub uzupełnienia |
+| `founder_essence` | Esencja założycielska | Archetyp duszy na wejściu |
+
+---
+
+## 🧪 Przykładowa metodologia:
+
+### ✳️ Krok 1: Interpretacja rdzenia
+- Rozpoznaj znak Słońca i Ascendent
+- Zbuduj opis „Wejścia na świat” i „Maski”
+
+### ✳️ Krok 2: Wątek cienia
+- Przejdź przez Księżyc, Wenus i Saturn → emocje, miłość, lekcja
+
+### ✳️ Krok 3: Archetyp ruchu
+- Mars, Uran, Jowisz → jak porusza się przez życie
+
+### ✳️ Krok 4: Potencjał duszy
+- Węzły księżycowe + dom 12 + Pluto
+
+---
+
+## 🌀 Format wynikowy
+- Modularna księga:
+  - Strona tytułowa + cytat
+  - Spis treści
+  - Rozdziały (moduły)
+  - Notatnik refleksji
+
+- Format eksportu:
+  - `.pdf` (premium)
+  - `.md` (standard)
+  - `.zip` (całość z grafikami)
+
+---
+
+## 💬 Inspiracje do języka
+- „Twój znak to nie etykieta – to portal.”
+- „Jowisz nie powie Ci, co robić. Ale pokaże, kiedy masz największy wiatr.”
+- „Znak Węzła Północnego to nie cel. To wewnętrzna przestrzeń do odzyskania.”
+
+---
+
+## ✅ Status
+System otwarty, gotowy do eksperymentów. Można budować pierwsze 3 moduły (Sun, Moon, Asc) i testować je na sobie oraz AI. Tymczasowo **niewidoczny w interfejsie użytkownika** – tylko dla operatora ND5 do dalszego opracowania.

@@ -1,0 +1,67 @@
+# 🧩 READING_TAG_SYSTEM.md – System tagowania rozkładów Echo Słów
+
+## 🎯 Cel
+Dokumentacja techniczna systemu tagów przypisywanych do rozkładów tarotowych w QuantumMist.
+Umożliwia:
+- filtrowanie, klasyfikowanie, sortowanie rozkładów,
+- ukryte oznaczanie energetycznych typów,
+- przygotowanie do przyszłych funkcji AI, eksportów i paneli operatorskich.
+
+---
+
+## 📦 Struktura danych (JSON / DB)
+```json
+{
+  "id": "reading_248",
+  "title": "Echo z Głębi",
+  "date": "2025-06-12",
+  "visible_type": "manual",
+  "meta_tags": ["initiatic", "deep_layer"],
+  "user_id": "user_311",
+  "content": "...",
+  "flagged": true,
+  "bookmark": true
+}
+```
+
+### Pola:
+- `visible_type` – co widzi użytkownik (np. `manual`, `ai_hint`)
+- `meta_tags[]` – systemowe, głębokie klasyfikatory, tylko dla Operatora
+- `flagged` – przypięty do panelu głównego
+- `bookmark` – oznaczony jako „do powrotu”
+
+---
+
+## 🧪 Przykładowe tagi systemowe
+- `initiatic`, `cycle_1`, `deep_layer`, `founder_essence`, `ritual`, `rune_blend`, `hidden_path`
+
+---
+
+## 🧠 Zachowanie systemowe:
+- Użytkownik widzi tylko `visible_type`
+- Operator Ishkarima (admin) widzi pełne `meta_tags`
+- Tagi mogą wpływać na:
+  - kolejność w historii,
+  - rekomendacje do „Echo do powrotu”,
+  - rozpoznawanie przez AI ścieżek (w przyszłości)
+
+---
+
+## 🔍 Filtry i wyszukiwanie
+- Użytkownik może filtrować tylko po `visible_type`
+- Operator może filtrować po `meta_tags[]`, np.:
+```js
+readings.filter(r => r.meta_tags.includes("initiatic"))
+```
+
+---
+
+## 🔐 Bezpieczeństwo i widoczność
+- `meta_tags` nie są eksportowane do użytkownika
+- pojawiają się tylko w panelu admina / Ishkarim Terminal
+- mogą być logowane do osobnego `reading_meta_log.md`
+
+---
+
+## ✅ Status
+System gotowy do podpięcia do `readings.json`, panelu admina i logicznej segmentacji rozkładów.

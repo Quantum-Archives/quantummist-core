@@ -1,0 +1,53 @@
+# 🧭 MAIN_MENU_VISUAL_STRUCTURE.md – Struktura głównego menu z elementami wizualnymi
+
+## 🎯 Cel
+Zaprojektować główne menu strony QuantumMist w stylu zbliżonym do UPP (ale bardziej esoteryczno-symboliczne), zawierające graficzne wejścia do poszczególnych sekcji oraz przestrzeń opisową — wprowadzającą użytkownika w świat, różniący się od ezoteryki mainstreamowej.
+
+---
+
+## 🌐 Ogólny układ
+
+| Obszar | Funkcja | Uwagi |
+|--------|---------|--------|
+| 🖼️ Ikony menu (graficzne) | Wejście do zakładek (Tarot, Horoskopy, Dziennik, etc.) | Obrazy zakodowane symbolicznie (runy, portale, znaki alchemiczne) |
+| 📖 Sekcja opisowa | Tekst wprowadzający do idei strony, filozofii pracy ND5 | Przewijany tekst lub strefa z cytatem rotacyjnym |
+| 🎨 Tło energetyczne | Subtelne animacje (mgła, linie siatki, światło z góry) | Nieagresywne, zminimalizowane rozpraszanie |
+| 📌 Przycisk nawigacyjny | Rozwijane menu z ikoną Ishkarim / ND5 | Dostęp do profilu, ustawień, dziennika |
+
+---
+
+## ✨ Sekcje dostępne z menu głównego
+
+1. Echo Słów (Tarot)
+2. Dziennik użytkownika
+3. Horoskopy
+4. Emocje Niewypowiedziane
+5. Echo sprzed 30 dni
+6. Ulubione (tablica)
+7. Stragan Światła (sklep)
+8. (Ukryte) Kosmogramy – tylko aktywowane przez ND5
+
+---
+
+## 🧠 Filozofia vs mainstream
+> „To nie jest katalog usług. To mapa inicjacyjna.”
+
+| QuantumMist | Mainstream ezoteryka |
+|-------------|----------------------|
+| Intencja → Proces → Świadomość | Usługa → Płatność → Gotowiec |
+| Refleksja, praca własna | Obietnice natychmiastowych efektów |
+| Mapowanie duszy i cienia | Rozkład „czy on mnie kocha?” |
+| Eksploracja + notatnik + przestrzeń | Chatbot z 3 kartami i reklamą | 
+
+---
+
+## 📌 Elementy UX do wdrożenia w etapie 1
+- prosta siatka z grafikami → klik = wejście w panel
+- aktywne „przejścia energetyczne” (delikatny fade-in, glow)
+- dostęp do opisów po najechaniu / kliknięciu
+- przeniesienie tekstów z plików (np. „Zanim zamówisz”) jako zawartości modali
+
+---
+
+## ✅ Status
+Zatwierdzony szkielet głównego menu. Gotowy do stworzenia jako osobny komponent graficzny, z integracją z systemem ND5 i przypisanymi panelami logicznymi.

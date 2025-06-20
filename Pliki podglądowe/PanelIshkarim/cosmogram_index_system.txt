@@ -1,0 +1,68 @@
+# 🔍 COSMOGRAM_INDEX_SYSTEM.md – Przeglądarka treści i słów kluczowych Kosmogramu
+
+## 🎯 Cel
+Umożliwić użytkownikowi:
+- szybki dostęp do wybranych fragmentów Kosmogramu,
+- wyszukiwanie słów i pojęć,
+- tworzenie własnych zestawów tematycznych,
+- pracę na fragmencie, nie na całości naraz.
+
+---
+
+## 📐 Elementy systemu
+
+### 📄 1. **Spis treści (ToC)**
+- generowany automatycznie na podstawie struktury `.md` lub `.html`
+- rozpoznaje nagłówki `#`, `##`, `###`
+- może być edytowany przez użytkownika:
+  - zmiana nazw sekcji
+  - oznaczenia: 🌱 „To dla mnie”, 🔍 „Wracam tu często”
+
+### 🔍 2. **Przeglądarka słów kluczowych**
+- analizuje cały kosmogram (Markdown/Text)
+- tworzy indeks:
+  - liczba wystąpień
+  - linki do wystąpień
+  - kategorie tematyczne (np. emocje, relacje, wola)
+
+### 📌 3. **Własne etykiety (tagi)**
+- użytkownik może dodać słowo kluczowe do wpisu i przypisać do siebie
+- np. „gniew” → przypisane do Marsa + osobista notatka
+
+---
+
+## 🧠 Przykład działania (user flow)
+
+1. Użytkownik klika „Przeglądaj słowa”
+2. Wpisuje: `gniew`
+3. System pokazuje:
+   - Mars (2 wystąpienia)
+   - Dom 8 (1 wystąpienie)
+4. Użytkownik klika Mars → przechodzi do tego rozdziału
+5. Dodaje komentarz: „To czuję w pracy z X”
+6. Zapisuje jako znacznik „🔥 punkt do pracy z AI”
+
+---
+
+## 🛠️ Techniczna struktura danych
+```json
+{
+  "term": "gniew",
+  "occurrences": [
+    { "section": "mars_pulse", "line": 42 },
+    { "section": "house_8", "line": 88 }
+  ],
+  "user_tags": ["impuls", "projekcja"]
+}
+```
+
+## 📤 Eksport:
+- Możliwość wygenerowania:
+  - `index_tags.json`
+  - fragmentów z wybranymi słowami
+  - własnych arkuszy tematycznych
+
+---
+
+## ✅ Status:
+System gotowy do implementacji. Może być rozszerzony do pracy z AI i powiązany z dziennikiem osobistym.

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "cykl_planetarny",
+    "title": "Cykl planetarny a decyzje krótkoterminowe",
+    "file": "cykl_planetarny.md",
+    "description": "Jak krótkie okresy tranzytów wpływają na codzienne decyzje."
+  },
+  {
+    "id": "aspekty_i_pozycja",
+    "title": "Aspekty i pozycja Słońca",
+    "file": "aspekty_slonca.md",
+    "description": "Techniczna analiza pozycji Słońca i jego wpływu na logikę dnia."
+  }
+]

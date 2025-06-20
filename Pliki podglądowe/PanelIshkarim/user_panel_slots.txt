@@ -1,0 +1,63 @@
+# 🧩 USER_PANEL_SLOTS.md – Sloty panelu użytkownika w QuantumMist
+
+## 🎯 Cel
+Opis rozmieszczenia, aktywacji i logiki działania slotów panelu użytkownika w QuantumMist. Dotyczy sekcji widocznych w interfejsie użytkownika, warunków ich aktywacji oraz interakcji z systemem.
+
+---
+
+## 🗂 Struktura głównych komponentów panelu
+
+### 🧪 `#user_panel_main`
+- Główny kontener panelu użytkownika
+- Dynamicznie zmieniający się zależnie od stanu konta
+- Ładowany przez backend (`user_state.json` lub sesja)
+
+---
+
+## 🔓 Sloty logiczne (aktywowane dynamicznie)
+
+### ✅ `slot:public_user_menu`
+- Widoczny dla każdego użytkownika (nawet niezalogowanego)
+- Funkcje: logowanie, rejestracja, kontakt, regulamin
+
+### 🔑 `slot:basic_account_controls`
+- Widoczny po zalogowaniu
+- Funkcje: zmiana hasła, ustawienia powiadomień, tryb ciemny
+
+### 🧿 `slot:trusted_user_features`
+- Dostępny tylko dla użytkowników oznaczonych jako `trusted`
+- Funkcje: przesyłanie grafik, video, rozszerzone preferencje AI
+- Zarządzany przez panel Ishkarim Admin
+
+### 💎 `slot:subscribed_features`
+- Aktywowany po aktywacji płatnej subskrypcji
+- Funkcje: dostęp do strefy głębi, eksporty premium, wykresy
+
+### 👻 `slot:shadow_mode_toggles`
+- Dostępny po włączeniu *trybu duch*
+- Wyłącza śledzenie aktywności, personalizację, analitykę
+
+---
+
+## 🔁 Logika warunków widoczności
+
+Każdy slot powinien być aktywowany zgodnie z lokalnym stanem konta lub zapytaniem do backendu:
+```js
+if (userState.trusted) {
+  renderSlot('trusted_user_features')
+}
+```
+
+Użytkownik nie powinien widzieć slotów, do których nie ma dostępu. Sloty mogą być preloadowane, ale ukryte (`hidden` lub `v-if=false`).
+
+---
+
+## 🧠 Przyszłe integracje
+- System tagów użytkownika (np. `writer`, `seer`, `creator`)
+- Dynamiczne komponowanie panelu z komponentów przypisanych do roli
+- Wizualizacja statusu konta jako „aura” (kolor, symbol, fluktuacja)
+
+## 🧩 Sloty gotowe do podpięcia
+- **W `chat.html`**: `#user_panel_hook`
+- **W `frontend/menu.html`**: `#main_user_toggle`
+- **W `ishkarim_admin/`**: logika przypisywania trust, sub, shadow

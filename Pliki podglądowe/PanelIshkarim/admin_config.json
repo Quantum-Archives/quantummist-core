@@ -1,0 +1,28 @@
+{
+  "sections": [
+    {
+      "id": "tarot",
+      "title": "Tarot",
+      "styles": ["zadaniowiec", "wrazliwy", "opiekun"],
+      "basePath": "/sections/tarot/"
+    },
+    {
+      "id": "horoskop",
+      "title": "Horoskop",
+      "styles": ["zadaniowiec"],
+      "basePath": "/sections/horoskop/"
+    },
+    {
+      "id": "numerologia",
+      "title": "Numerologia",
+      "styles": ["zadaniowiec"],
+      "basePath": "/sections/numerologia/"
+    },
+    {
+      "id": "aerendal",
+      "title": "Strefa Aerendal",
+      "styles": ["archiwum"],
+      "basePath": "/aerendal/"
+    }
+  ]
+}

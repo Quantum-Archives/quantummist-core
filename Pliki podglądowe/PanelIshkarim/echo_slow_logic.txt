@@ -1,0 +1,55 @@
+# 🔮 ECHO_SLOW_LOGIC.md – Panel Echo Słów (rozkłady tarotowe)
+
+## 🎯 Cel
+Stworzenie interfejsu i logiki działania panelu "Echo Słów" – czyli przestrzeni do przeglądania otrzymanych rozkładów, dodawania notatek, oraz korzystania z funkcji subskrypcyjnych typu "doprecyzuj proszę".
+
+---
+
+## 📐 Wymiary UI (desktop)
+
+| Element                        | Wymiar       | CSS px (96 DPI) |
+|-------------------------------|--------------|------------------|
+| Lista rozkładów (lewa kolumna) | 6 cm szerokości | ~230px |
+| Okno tekstowe rozkładu        | 14 cm × 14 cm   | ~530px × 530px |
+| Pasek nagłówka (tytuł + meta) | 1 cm wysokości | ~38px |
+
+---
+
+## 🧱 Struktura komponentów
+
+### `slot:tarot_panel_main`
+- Główna struktura panelu
+- Lewa kolumna: lista rozkładów z datą, tytułem, typem (AI/manual)
+- Prawa kolumna: podgląd konkretnego rozkładu
+
+### `slot:tarot_entry_viewer`
+- Wyświetla tytuł, datę, typ rozkładu
+- Treść rozkładu (formatowana)
+- Osobna sekcja z notatkami użytkownika
+
+### `slot:tarot_user_notes`
+- Dodawanie osobistych notatek do rozkładu
+- Przycisk „🪶 Wyślij do dziennika” → tworzy wpis `/user_journals/{user}/echo_{id}.md`
+- Notatki NIE nadpisują oryginału
+
+### `slot:tarot_subscriber_actions`
+- Dostępny tylko dla subskrybentów
+- Przycisk „🌀 Doprecyzuj proszę” → wysyła do admina lub operatora duchowego (bez roli sysadmina)
+
+---
+
+## 🔄 Przyszłe funkcje
+- Oznaczanie rozkładów jako „ulubione” / „do powrotu”
+- Eksport do PDF
+- Wersja offline z kontemplacją i cytatami
+- Notatki głosowe do rozkładów
+
+---
+
+## 🔌 Sloty systemowe
+- `slot:tarot_panel_main` ← podpięcie do menu użytkownika
+- `slot:tarot_to_journal_hook` ← integracja z dziennikiem
+- `slot:tarot_subscriber_actions` ← aktywowane tylko, gdy `user.subscribed == true`
+
+## ✅ Status
+Struktura logiczna gotowa. Frontend do wygenerowania na bazie `echo_slow_panel.html`.

@@ -1,0 +1,59 @@
+# 🛠️ ISHKARIM_ADMIN_PANEL.md – Panel Zarządzania QuantumMist ND5
+
+## 🎯 Cel
+Zaprojektowanie i uruchomienie panelu administracyjnego służącego do zarządzania treściami portalu QuantumMist w ramach operacji ND5 (Faza I).
+
+---
+
+## ✅ Status panelu
+- Panel dostępny pod adresem: `/admin/panel/ishkarim_admin_panel_ui.html`
+- Serwowany przez Flask na porcie `:5000`
+- Widok renderowany statycznie z katalogu `/srv/quantummist/admin/panel/`
+
+---
+
+## 🔧 Funkcjonalności (Faza I)
+
+### 📁 Struktura sekcji i stylów
+- Wyświetlanie konfiguracji z `admin_config.json`
+- Przegląd sekcji: Tarot, Horoskop, Numerologia, Aerendal
+- Styl odbioru: Zadaniowiec, Wrażliwy, Opiekun, Archiwum
+
+### 📄 Podgląd wpisów Markdown `.md`
+- Pole do ręcznego wklejania ścieżki do wpisu
+- Przycisk „Załaduj” renderuje treść jako HTML (biblioteka `marked.js`)
+- Wspiera pliki z `/sections/`, `/aerendal/`, `/users/` itd.
+
+### 🧱 Backend i routing
+- Routing `@app.route('/admin/panel/<path:filename>')` w `main.py`
+- Pliki statyczne nie wymagają Jinja2
+- Oddzielona architektura: frontend admina ≠ frontend użytkownika
+
+---
+
+## 🔜 Planowane funkcje (Faza II)
+- Edycja wpisów `.md` bezpośrednio w przeglądarce
+- Upload i nadpisywanie plików przez interfejs UI
+- Dodawanie i ukrywanie wpisów w `index.json`
+- Zarządzanie widocznością sekcji i stylów
+- Integracja z systemem slotów, cytatów, refleksji AI
+
+---
+
+## 📁 Struktura plików admina (Faza I)
+```
+/srv/quantummist/
+├── admin/
+│   ├── panel/               # ishkarim_admin_panel_ui.html
+│   ├── config/              # admin_config.json, sections_index.json
+│   └── logs/ uploads/       # do aktywacji w Faza II
+├── scripts/
+│   └── admin.js             # logika wyświetlania panelu
+```
+
+---
+
+## ✅ Podsumowanie
+Panel Ishkarima działa. Renderuje treści, wyświetla strukturę portalu, testuje ścieżki. Gotowy do dalszego rozwoju.  
+ND5 ma pełen wgląd, a użytkownicy — jeszcze nie widzą nic.  
+Tak jak miało być 😎

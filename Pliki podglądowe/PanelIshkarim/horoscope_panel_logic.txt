@@ -1,0 +1,72 @@
+# 🪐 HOROSCOPE_PANEL_LOGIC.md – Zakładka Horoskopy w QuantumMist
+
+## 🎯 Cel
+Stworzenie przestrzeni dla użytkownika do przeglądania, komentowania i archiwizowania otrzymanych horoskopów (kosmogramów), które zostały przygotowane manualnie (lub z czasem przez AI), jako część głębszej ścieżki astrologicznej.
+
+---
+
+## 📐 Layout (zgodny z Echo Słów / Dziennik)
+
+| Element               | Wymiar       | CSS px (96 DPI) |
+|----------------------|--------------|------------------|
+| Lista horoskopów     | 6 cm × 14 cm | ~230px × 530px   |
+| Okno podglądu        | 14 cm × 14 cm| ~530px × 530px   |
+| Pasek nagłówka       | 1 cm         | ~38px            |
+
+---
+
+## 🧱 Główne komponenty
+
+### `slot:horoscope_list`
+- Lista nazwanych horoskopów
+- np. "Kosmogram narodzin", "Transyty kwietniowe", "Cień Wenus"
+
+### `slot:horoscope_viewer`
+- Wyświetla horoskop jako tekst, PDF lub opis podzielony na sekcje
+- Możliwość dodania notatki własnej
+
+### `slot:horoscope_actions`
+- 🪶 Dodaj do dziennika
+- 📥 Pobierz jako PDF / Markdown
+- 🔖 Przypnij do panelu głównego
+
+---
+
+## 💾 Przechowywanie
+```json
+{
+  "id": "hor_231",
+  "title": "Kosmogram urodzeniowy",
+  "date": "1993-12-07",
+  "user_id": "user_411",
+  "file": "kosmogram_231.pdf",
+  "tags": ["birth_chart"],
+  "pinned": true
+}
+```
+
+---
+
+## 📌 Założenia funkcjonalne
+- Horoskopy są **przygotowywane ręcznie** i przypisane do użytkownika
+- Użytkownik **nie tworzy ich sam**, ale może:
+  - czytać,
+  - dodawać własne refleksje,
+  - eksportować,
+  - przenieść do dziennika
+
+- Wersja podstawowa: tylko widok i notatka
+- Wersja rozbudowana: segmenty (planety, domy, aspekty)
+- Format akceptowany: `.pdf`, `.md`, `.txt`
+
+---
+
+## 🔌 Sloty techniczne
+- `slot:horoscope_list` ← boczna lista
+- `slot:horoscope_viewer` ← pole widoku
+- `slot:horoscope_actions` ← przyciski interakcji
+
+---
+
+## ✅ Status
+Struktura gotowa do implementacji. Możliwość podpięcia do backendu, obsługi plików, i dziennika użytkownika.

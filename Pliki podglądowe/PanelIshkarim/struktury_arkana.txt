@@ -1,0 +1,20 @@
+# Struktury Arkanów
+
+> Techniczny przegląd 22 kart Wielkich Arkanów w układzie binarnym
+
+Każdy z Wielkich Arkanów może być rozumiany jako wartość logiczna w strukturze decyzji. 
+
+| Arkan | Symbol | Pozycja | Interpretacja binarna |
+|-------|--------|---------|------------------------|
+| 0 – Głupiec | 🃏 | początek lub reset | 0 lub ∞ – brak kodu |
+| 1 – Mag | 🪄 | aktywacja | 1 – inicjacja działania |
+| 2 – Kapłanka | 🌑 | zatrzymanie, intuicja | 0 – pasywny odbiór |
+| 3 – Cesarzowa | 🌿 | twórczość, plon | 1 – produkcja energii |
+| ... | ... | ... | ... |
+
+System można wykorzystać w rozkładach wymagających precyzyjnego podejścia analitycznego, np. w interpretacjach relacyjnych lub konstrukcji makroukładów.
+
+---
+
+### Notatka:
+To podejście nie wyklucza symbolicznej głębi kart – stanowi ich warstwę techniczną, analityczną, służącą ND5 do tworzenia modeli opartej na AI syntezy rozkładów.

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "struktury_arkana",
+    "title": "Struktury Arkanów",
+    "file": "struktury_arkana.md",
+    "description": "Techniczny przegląd 22 kart Wielkich Arkanów w układzie binarnym."
+  },
+  {
+    "id": "fazy_rozkładów",
+    "title": "Fazy rozkładów",
+    "file": "fazy_rozkładów.md",
+    "description": "Etapowanie interpretacji – jak dzielić pytania i układy na procesy."
+  }
+]
