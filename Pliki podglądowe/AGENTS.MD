@@ -1,8 +1,4 @@
-# 📘 ISHKARIM_CORE_LOG.md
-
-(... poprzednie wpisy ...)
-
-## 🔹 [Q_013] Zasady techniczne i styl commitów dla Codexa
+Zasady techniczne i styl commitów dla Codexa
 **Data:** 2025-06-20  
 **Opis:** Dodano wytyczne techniczne i standardy kodowania, z którymi Codex i inni agenci muszą się zapoznać przed operowaniem na kodzie systemu QuantumMist. Te zasady mają na celu:
 - zachowanie spójności stylistycznej,
@@ -32,7 +28,7 @@
 - Pliki `md` muszą być aktualizowane razem z funkcją
 
 ### 🔄 Synchronizacja:
-- Każdy nowy plik .html lub .py musi być zarejestrowany w `ISHKARIM_CORE_LOG.md`
+-agent ma dowolność w wyborze technologi, języków, Sugestie Agenta są mile widziane
 - Commit bez logu = commit nieistniejący (zostanie nadpisany przez Agenta)
 
 **Pliki:** `ISHKARIM_CORE_LOG.md`, `codex_agent_directives.md`  
