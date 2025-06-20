@@ -1,0 +1,43 @@
+<!-- ishkarim:slot:panel_echo_slow -->
+<div class="flex h-full">
+  <!-- Lista rozkładów -->
+  <aside class="w-[6cm] p-4 overflow-y-auto bg-gray-50 border-r">
+    <!-- ishkarim:slot:reading_list -->
+    <ul id="readingList">
+      <!-- Elementy będą generowane dynamicznie -->
+    </ul>
+  </aside>
+
+  <!-- Okno rozkładu -->
+  <main class="flex-1 p-4 overflow-y-auto">
+    <!-- Belka nagłówkowa -->
+    <header class="h-[1cm] mb-2 flex items-center justify-between text-sm text-gray-600">
+      <!-- ishkarim:slot:reading_meta -->
+      <span id="readingTitle">Tytuł Rozkładu</span>
+      <span id="readingDate">Data</span>
+      <span id="readingType">Typ</span>
+    </header>
+
+    <!-- Treść rozkładu -->
+    <section class="h-[14cm] bg-white shadow rounded p-4 space-y-4">
+      <!-- ishkarim:slot:reading_body -->
+      <article id="readingText">
+        <!-- Tekst rozkładu -->
+      </article>
+
+      <!-- Notatka użytkownika -->
+      <!-- ishkarim:slot:user_note -->
+      <textarea id="userNote" class="w-full h-32 p-2 border rounded" placeholder="Dodaj swoją notatkę..."></textarea>
+
+      <!-- Przyciski -->
+      <div class="flex gap-4">
+        <button class="bg-blue-600 text-white px-4 py-2 rounded" onclick="saveNoteToJournal()">
+          🪶 Wyślij do dziennika
+        </button>
+        <button class="bg-purple-600 text-white px-4 py-2 rounded" onclick="requestClarification()">
+          🌀 Doprecyzuj proszę
+        </button>
+      </div>
+    </section>
+  </main>
+</div>
